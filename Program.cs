@@ -1,4 +1,119 @@
-﻿// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, 
+﻿
+// Задача 19
+
+// Напишите программу, которая принимает на вход пятизначное число и проверяет, 
+// является ли оно палиндромом. Через строку решать нельзя.
+
+// 14212 -> нет
+
+// 12821 -> да
+
+// 23432 -> да
+
+//  void palindrom()
+//         {
+//         //int number = new Random().Next(1, 100000); for random number!!
+
+//         Console.Write("необходимо ввести пятизначное число");
+//         int number = Convert.ToInt32(Console.ReadLine()); 
+//         int number1 = number / 10000 % 10;
+//         int number2 = number / 1000 % 10;
+//         int reverse1 = number / 10 % 10;
+//         int reverse2 = number % 10;
+//         int noll = number / 10000;
+        
+//             if (noll < 1 || noll > 9){
+//             Console.WriteLine(number + "введено не пятизначное число");
+//             }
+//             else if  (number1 == reverse2 && number2 == reverse1){
+//             Console.WriteLine(number + "Введенное число - палиндром");
+//             }
+//             else
+//             {
+//             Console.WriteLine(number + "Введенное число не палиндром");
+//             }
+            
+//         }
+//         for (int i = 0; i < 10; i++)
+//         { 
+//             palindrom();
+//             break;
+//     }
+
+// Задача 21
+
+// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между 
+// ними в 3D пространстве.
+
+// A (3,6,8); B (2,1,-7), -> 15.84
+
+// A (7,-5, 0); B (1,-1,9) -> 11.53
+
+// Console.WriteLine("Введите x 1 точки");
+
+// int x1 = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("Введите y 1 точки");
+
+// int y1 = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("Введите z 1 точки");
+
+// int z1 = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("Введите x 2 точки");
+
+// int x2 = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("Введите y 2 точки");
+
+// int y2 = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("Введите z 2 точки");
+
+// int z2 = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine(DistancePount(x1, y1, x2, y2, z1, z2));
+
+// // теорема пифагора d = Vsqrt((x2-x1)^2 + (y2-y1)^2 + (z1-z2)^2)
+
+// double DistancePount(int x1, int y1, int x2, int y2, int z1, int z2)
+
+// {
+
+//     double result1 = (x2 - x1)*(x2 - x1);
+//     double result2 = (y2 - y1)*(y2 - y1);
+//     double result3 = (z2 - z1)*(z2 - z1);
+
+//     double result = Math.Sqrt(result1 + result2 + result3);
+
+//     return result;
+// }
+
+// Задача 23
+
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
+
+//  Console.Write("Введите число: ");
+//  int number = Convert.ToInt32(Console.ReadLine());
+
+// for (int i = 1; i <= number; i++)
+// {
+//     Console.Write($"{i * i * i}, ");
+// }
+
+
+
+
+
+
+
+
+
+// Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, 
 //какое число большее, а какое меньшее.
 
 // a = 5; b = 7 -> max = 7
