@@ -1,14 +1,139 @@
-﻿
-// Задача 19
+﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+// Напишите программу, которая покажет количество чётных чисел в массиве.
 
-// Напишите программу, которая принимает на вход пятизначное число и проверяет, 
-// является ли оно палиндромом. Через строку решать нельзя.
+// [345, 897, 568, 234] -> 2
 
-// 14212 -> нет
+// Console.WriteLine("Необходимо указать размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] numbers = new int[size];
 
-// 12821 -> да
+// FillArray(numbers);
+// Console.WriteLine("Анализируемый массив: ");
+// PrintArray(numbers);
+// int count = 0;
 
-// 23432 -> да
+// for (int j = 0; j < numbers.Length; j++)
+// if (numbers[j] % 2 == 0)
+// count++;
+
+// Console.WriteLine($"Из {numbers.Length} чисел, {count} являются четными");
+
+// void FillArray(int[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//     {
+//         numbers[i] = new Random().Next(100,1000);
+//     }
+// }
+// void PrintArray(int[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//     {
+//         Console.Write(numbers[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
+
+// [3, 7, 23, 12] -> 19
+
+// [-4, -6, 89, 6] -> 0
+
+// Console.WriteLine("Необходимо указать размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] numbers = new int[size];
+
+// FillArray(numbers);
+// Console.WriteLine("Анализируемый массив: ");
+// PrintArray(numbers);
+// int sum = 0;
+
+// for (int j = 0; j < numbers.Length; j+=2)
+//     sum = sum + numbers[j];
+
+//     Console.WriteLine($"в массиве чисел {numbers.Length}, сумма элементов из нечетных позиций = {sum}");
+
+// void FillArray(int[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             numbers[i] = new Random().Next(1,10);
+//         }
+// }
+// void PrintArray(int[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             Console.Write(numbers[i] + " ");
+//         }
+//     Console.WriteLine();
+// }
+
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и
+//  минимальным элементов массива.
+
+// [3 7 22 2 78] -> 76
+
+// Console.WriteLine("Необходимо указать размер массива");
+// int size = Convert.ToInt32(Console.ReadLine());
+// double[] numbers = new double[size];
+// FillArray(numbers);
+// Console.WriteLine("Анализируемый массив: ");
+// PrintArray(numbers);
+// double min = Int32.MaxValue;
+// double max = Int32.MinValue;
+
+// for (int j = 0; j < numbers.Length; j++)
+// {
+//     if (numbers[j] > max)
+//         {
+//             max = numbers[j];
+//         }
+//     if (numbers[j] < min)
+//         {
+//             min = numbers[j];
+//         }
+// }
+
+// Console.WriteLine($"в массив чисел {numbers.Length} чисел. Максимум = {max}, минимум = {min}");
+// Console.WriteLine($"разница между максимум и минимум значением = {max - min}");
+
+// void FillArray(double[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+//         }
+// }
+// void PrintArray(double[] numbers)
+// {
+//     for(int i = 0; i < numbers.Length; i++)
+//         {
+//             Console.Write(numbers[i] + " ");
+//         }
+    
+//     Console.WriteLine();
+// }
+
+
+
+
+
+
+// // Задача 19
+
+// // Напишите программу, которая принимает на вход пятизначное число и проверяет, 
+// // является ли оно палиндромом. Через строку решать нельзя.
+
+// // 14212 -> нет
+
+// // 12821 -> да
+
+// // 23432 -> да
 
 //  void palindrom()
 //         {
