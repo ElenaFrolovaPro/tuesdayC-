@@ -1,137 +1,43 @@
-﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
-
-// m = 3, n = 4.
-
-// 0,5 7 -2 -0,2
-
-// 1 -3,3 8 -9,9
-
-// 8 7,8 -7,1 9
-
-// int m = ReadInt("Введите количество строк матрицы: ");
-// int n = ReadInt("Введите количество столбцов матрицы: ");
-// double [,] matrix = new double [m, n];
-// CreateMatrix(matrix);
-// PrintMatrix(matrix);
-
-// int ReadInt(string text)
-// {
-//     System.Console.Write(text);
-//     return Convert.ToInt32(Console.ReadLine());
-// }
-
-//  void CreateMatrix(double [,] matrix)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             matrix[i,j] = new Random().Next(-10, 11) / 10.0;
-//         }
-//     }
-
-// }
-// void PrintMatrix(double [,] matrix)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             System.Console.Write(matrix[i,j] + "\t");
-//         }
-//         System.Console.WriteLine();
-//     }
-// }
-
-
-// Задача 50. Напишите программу, которая на вход принимает значение элемента в двумерном массиве, 
-// и возвращает позицию этого элемента или же указание, что такого элемента нет.
-
-// Например, задан массив:
-
-// 1 4 7 2
-
-// 5 9 2 3
-
-// 8 4 2 4
-
-// 17 -> такого числа в массиве нет
-
-// int [,] matrix = new int [6, 8];
-// CreateMatrix(matrix);
-// PrintMatrix(matrix);
-// GetPositionOfElement(matrix);
-
-// void GetPositionOfElement(int[,] matrix)
-// {
-// Console.WriteLine("Введите значение элемента a: ");
-// var a = int.Parse(Console.ReadLine()!);
-// for (var i = 0; i < matrix.GetLength(0); i++)
-// {
-// for (var j = 0; j < matrix.GetLength(1); j++)
-// {
-// if (matrix[i, j].Equals(a))
-// {
-// Console.WriteLine("Позиция этого элемента: " + (i, j));
-// return;
-// }
-// }
-// }
-// Console.WriteLine("Такого элемента нет");
-// }
-
-//  void CreateMatrix(int [,] matrix)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             matrix[i,j] = new Random().Next(-10, 11);
-//         }
-//     }
-
-// }
-// void PrintMatrix(int [,] matrix)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j++)
-//         {
-//             System.Console.Write(matrix[i,j] + "\t");
-//         }
-//         System.Console.WriteLine();
-//     }
-// }
-
-
-// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в 
-// каждом столбце.
-
+﻿// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой 
+// строки двумерного массива.
 // Например, задан массив:
 // 1 4 7 2
 // 5 9 2 3
 // 8 4 2 4
-// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+// В итоге получается вот такой массив:
+// 7 4 2 1
+// 9 5 3 2
+// 8 4 4 2
 
-// int n = 3;
-// int m = 4;
-// int [,] matrix = new int [n, m];
+// int [,] matrix = new int [4, 4];
 // CreateMatrix(matrix);
 // PrintMatrix(matrix);
+// GetOrderMatrix(matrix);
 
-// for (int j = 0; j < matrix.GetLength(1); j++)
+// void GetOrderMatrix(int[,] matrix)
 // {
-//     double result = 0.0;
-//     for (int i = 0; i < matrix.GetLength(0); i++)
+
+// for (int i = 0; i < matrix.GetLength(0); i++)
 // {
-//     result += matrix[i, j];
+// for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+// {
+//     for (int k = 0; k < matrix.GetLength(1) - 1; k++)
+//     {
+//         if (matrix[i, k] < matrix [i, k+1])
+//         {
+//             int order = 0;
+//             order = matrix[i, k];
+//             matrix[i, k] = matrix[i, k + 1];
+//             matrix[i, k + 1] = order;
+
+//         }
+//     }
 // }
-// result = result / n;
-// Console.Write(result + "; ");
+// }
 // }
 // Console.WriteLine();
 
-
+// PrintMatrix(matrix);
 
 //  void CreateMatrix(int [,] matrix)
 // {
@@ -139,7 +45,7 @@
 //     {
 //         for (int j = 0; j < matrix.GetLength(1); j++)
 //         {
-//             matrix[i,j] = new Random().Next(1, 11);
+//             matrix[i,j] = new Random().Next(1, 10);
 //         }
 //     }
 
@@ -156,3 +62,242 @@
 //     }
 // }
 
+
+// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку 
+// с наименьшей суммой элементов.
+
+// Например, задан массив:
+
+// 1 4 7 2
+
+// 5 9 2 3
+
+// 8 4 2 4
+
+// 5 2 6 7
+
+// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой 
+// элементов: 1 строка
+
+
+// int [,] matrix = new int [4, 6];
+// CreateMatrix(matrix);
+// PrintMatrix(matrix);
+// int minimal = 0;
+// int countline = CountMinLine(matrix, 0);
+
+// for (int i = 0; i < matrix.GetLength(0); i++)
+// {
+//     int sum = CountMinLine(matrix, i);
+//     if (countline > sum)
+//     {
+//         countline = sum;
+//         minimal = i;
+//     }
+// }
+// Console.WriteLine($"the minimal sum is in string {minimal + 1}");
+
+// int CountMinLine(int[,] matrix, int i)
+// {
+//     int countline = matrix[i, 0];
+//     for (int j = 0; j < matrix.GetLength(1); j++)
+//     {
+//         countline += matrix[i,j];
+//     }
+//     return countline;
+// }
+//  void CreateMatrix(int [,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i,j] = new Random().Next(1, 10);
+//         }
+//     }
+
+// }
+// void PrintMatrix(int [,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             System.Console.Write(matrix[i,j] + "\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// Например, даны 2 матрицы:
+// 2 4 | 3 4
+// 3 2 | 3 3
+// Результирующая матрица будет:
+// 18 20
+// 15 18
+
+
+// int [,] matrixfirst = new int [2, 3];
+// int [,] matrixsecond = new int [3, 2];
+// CreateMatrix(matrixfirst);
+// CreateMatrix(matrixsecond);
+// PrintMatrix(matrixfirst);
+// Console.WriteLine();
+// PrintMatrix(matrixsecond);
+// Console.WriteLine();
+// int m = 2;
+
+// int [,] matrixresult = new int [m, m];
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < m; j++)
+//     {
+//         for (int k = 0; k < m; k++)
+//         {
+//             matrixresult[i,j] = matrixresult[i,j] + (matrixfirst[i,k] * matrixsecond[k, j]); 
+//         }
+//     }
+// }
+// PrintMatrix(matrixresult);
+
+//  void CreateMatrix(int [,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i,j] = new Random().Next(0, 10);
+//         }
+//     }
+
+// }
+// void PrintMatrix(int [,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             System.Console.Write(matrix[i,j] + "\t");
+//         }
+//         System.Console.WriteLine();
+//     }
+// }
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+// Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// Массив размером 2 x 2 x 2
+// 66(0,0,0) 25(0,1,0)
+// 34(1,0,0) 41(1,1,0)
+// 27(0,0,1) 90(0,1,1)
+// 26(1,0,1) 55(1,1,1)
+
+// int[,,] CreateMatrix(int row, int col, int dep, int min, int max)
+// {
+//     int[,,] matrix = new int[row, col, dep];
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < matrix.GetLength(2); k++) 
+//             {
+//                 matrix[i, j, k] = GetUniqueValue(matrix, min, max, i, j, k); 
+//             }
+//         }
+//     }
+//     return matrix;
+// }
+// Random rnd = new Random();
+
+// int GetUniqueValue(int[,,] matrix, int min, int max, int i, int j, int k)
+// {
+//     int value = default;
+//     bool exist = true;
+//     while (exist)
+//     {
+//         bool tobreak = false;
+//         value = rnd.Next(min, max + 1);
+//         for (int i1 = 0; i1 < matrix.GetLength(0); i1++)
+//         {
+//             if (tobreak) { break; }
+//             for (int j1 = 0; j1 < matrix.GetLength(1); j1++)
+//             {
+//                 if (tobreak) { break; }
+//                 for (int k1 = 0; k1 < matrix.GetLength(2); k1++)
+//                 {
+//                     if (matrix[i1, j1, k1] == value) { tobreak = true; break; }
+//                     if (i1 == i && j1 == j && k1 == k) { exist = false; }
+//                 }
+//             }
+//         }
+//     }
+//     return value;
+// }
+// void PrintMatrix(int[,,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             Console.Write("|");
+//             for (int k = 0; k < matrix.GetLength(2); k++) 
+//             { 
+//                 Console.Write($"{matrix[i, j, k],1}({i},{j},{k})|"); 
+//             }
+//             Console.WriteLine();
+//         }
+//     }
+// }
+
+// int[,,] array3D = CreateMatrix(2, 2, 2, 10, 99);
+// PrintMatrix(array3D);
+
+
+// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+// Например, на выходе получается вот такой массив:
+// 01 02 03 04
+// 12 13 14 05
+// 11 16 15 06
+// 10 09 08 07
+
+// int[,] spiralMatrix = new int[4, 4];
+
+// int def = 1;
+// int i = 0;
+// int j = 0;
+
+// void CreateMatrix (int[,] matrix)
+// {
+//   while (def <= spiralMatrix.GetLength(0) * spiralMatrix.GetLength(1))
+//   {
+//     spiralMatrix[i, j] = def;
+//     def++;
+//     if (i <= j + 1 && i + j < spiralMatrix.GetLength(1) - 1)
+//     j++;
+//     else if (i < j && i + j >= spiralMatrix.GetLength(0) - 1)
+//     i++;
+//     else if (i >= j && i + j > spiralMatrix.GetLength(1) - 1)
+//     j--;
+//     else
+//     i--;
+//   }
+// }
+// CreateMatrix(spiralMatrix);
+
+// PrintMatrix(spiralMatrix);
+
+// void PrintMatrix (int[,] matrix)
+// {
+//   for (int i = 0; i < matrix.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < matrix.GetLength(1); j++)
+//     {
+//       if (matrix[i,j] / 10 <= 0)
+//       Console.Write($" {matrix[i,j]} ");
+
+//       else Console.Write($"{matrix[i,j]} ");
+//     }
+//     Console.WriteLine();
+//   }
+// }
